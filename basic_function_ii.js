@@ -44,17 +44,15 @@ console.log(printReturnAnother(testArr));
 
 //  4. Double Vision            Need to retain value of orginal array.
 function doubleVision(array){
-    var holdValue = array;
-    for(var i = 0; i < holdValue.length; i++){
-        holdValue[i] *= holdValue[i];
+    var holdArray = [];
+    for(var i = 0; i < array.length; i++){
+        var doubleHold = array[i]*2;
+        holdArray.push(doubleHold);
     }
-    return holdValue;
+    return holdArray;
 }
-var testArr = [1,2,3];
-var holdValue = testArr;
-console.log("Original Array :", testArr);
-console.log("Double Vision Array :", doubleVision(holdValue));
-console.log(testArr)
+var testArr = [-1,3,5,-5];
+console.log("Orginal array :", testArr, "Doubling Array Values :", doubleVision(testArr));
 
 //  5. Count Positives
 function countPositives(array){
@@ -116,3 +114,30 @@ var testArr = ["hello", "dojo", "awesome"];
 console.log(previousLengths(testArr));
 
 // 9. Add Seven
+// Accept Array. Return new array with added value of +7 to each. Do not alter orginal array.
+function addSeven(array){
+    newArr = [];
+    for(var i=0; i< array.length; i++){
+        newArr.push(array[i]+7);
+    }
+    return newArr;
+}
+var testArr = [1,3,2,4];
+console.log(addSeven(testArr));
+
+//  10. Reverse Array
+function reverseArray(array){
+    var n = 0;
+    for(var i=0; i < array.length/2; i++){
+        for(var j=array.length-1; j>0; j--){
+            var hold = array[i];
+            array[i] = array[j];
+            array[j] = hold;
+        }
+        
+                   // 
+    }
+    return array;
+}
+var testArr = [1,2,3,4];
+console.log(reverseArray(testArr));
