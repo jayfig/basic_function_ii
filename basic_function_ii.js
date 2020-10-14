@@ -70,6 +70,49 @@ var testArr = [-1,1,1,1];
 console.log(countPositives(testArr));
 
 //  6. Evens and Odds.
-// Takes array
-// Every 3 odd print "Thats odd"
-// Every 3 even print "Thats even"
+function evenOdd(array){
+    counterOdd = 0;
+    counterEven = 0;
+    for(var i = 0; i < array.length; i++){
+        if(array[i]%2 == 0){
+            counterEven++
+            if(counterEven%3 == 0){
+                console.log("Thats Even");
+            }
+        }
+        else{
+            counterOdd++;
+            if(counterOdd%3 == 0){
+                console.log("Thats Odd");
+            }
+        }
+    }
+}              
+
+var testArr = [1,2,3,4,5,6,2,3,4,5,6,2,3,4,5,6,2,3,4,5,6];
+evenOdd(testArr);
+
+// 7. Increment the Seconds
+function incrementSeconds(array){
+    for(var i =0; i < array.length; i++){
+        if(i%2 == 1){
+            array[i]+=1;
+        }
+        console.log(array[i]);
+    }
+    return array;
+}
+var testArr = [1,2,3,4,5,6];
+incrementSeconds(testArr);
+
+// 8. Previous Lengths
+function previousLengths(array){
+    for(var i = array.length-1; i > 0; i--){
+        array[i] = array[i-1].length;
+    }
+    return array;
+}
+var testArr = ["hello", "dojo", "awesome"];
+console.log(previousLengths(testArr));
+
+// 9. Add Seven
