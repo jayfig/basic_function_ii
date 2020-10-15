@@ -127,17 +127,82 @@ console.log(addSeven(testArr));
 
 //  10. Reverse Array
 function reverseArray(array){
-    var n = 0;
-    for(var i=0; i < array.length/2; i++){
-        for(var j=array.length-1; j>0; j--){
-            var hold = array[i];
-            array[i] = array[j];
-            array[j] = hold;
-        }
-        
-                   // 
+    x=0;
+    y=array.length-1;
+    while(y > x){
+        var hold = array[x];
+        array[x] = array[y];
+        array[y] = hold;
+        x++;
+        y--;
     }
     return array;
 }
 var testArr = [1,2,3,4];
 console.log(reverseArray(testArr));
+
+// 11. Outlook: Negative
+function outlookNegative(array){
+    var newArr = [];
+    for(var i=0; i < array.length; i++){
+        if(array[i]>0){
+            newArr.push(0-array[i])
+        }
+        else{
+            newArr.push(array[i])
+        }
+    }
+    return newArr;
+}
+var testArr = [1,-3,5];
+console.log(outlookNegative(testArr));
+
+// 12. Always hungry.
+function alwaysHungry(array){
+    var noFoodCounter = array.length-1;
+    for(var i=0; i < array.length; i++){
+        if(array[i] == 'food'){
+            console.log("Yummy");
+        }
+        else if(noFoodCounter == 0){
+            console.log("I'm hungry");
+            return;
+        }
+        else{
+            noFoodCounter--;
+        }
+    }
+};
+
+var noFood = ['poop','poop','poop'];
+var food = ['food','food','candy'];
+alwaysHungry(noFood);
+alwaysHungry(food);
+
+// 13. Swap toward the center.
+function swapTowardCenter(array){
+    var newArr = [];
+    for(var i=0; i<array.length; i++){
+        for(var j=array.length-1; j > i; j--){
+            var hold = array[i];
+            array[i] = array[j];
+            array[j] = hold;
+
+        };
+    };
+    return array;
+};
+
+var newArr = [1,2,3,4,5];
+console.log(swapTowardCenter(newArr));
+
+// 14. Scape the Array
+function scaleArray(array,scaler){
+    for(var i=0; i<array.length; i++){
+        array[i] *= scaler;
+    }
+    return array;
+}
+
+var newArr = [1,2,3];
+console.log(scaleArray(newArr,3));
